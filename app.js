@@ -293,5 +293,15 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
   });
 });
 
+// GitHub redirects are intentionally disabled for now while keeping the visual UI unchanged.
+document.querySelectorAll('a[href*="github.com"]').forEach(link=>{
+  link.removeAttribute('href');
+  link.removeAttribute('target');
+  link.removeAttribute('rel');
+  link.setAttribute('aria-disabled','true');
+  link.style.cursor='default';
+  link.addEventListener('click',event=>event.preventDefault());
+});
+
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
