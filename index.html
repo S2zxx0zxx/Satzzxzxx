@@ -2,153 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f7f7f4" />
-  <meta name="description" content="Satyam Kumar (Satzzxzxx) — builder, creator and digital entrepreneur shipping AI, finance, web and mobile products." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbfbf7" />
+  <meta name="description" content="Satyam Kumar (Satzzxzxx) — builder and product creator shipping AI, finance, web and mobile products in public." />
   <meta property="og:title" content="Satzzxzxx — Builder & Product Creator" />
-  <meta property="og:description" content="I build useful digital products and turn ideas into real experiences." />
+  <meta property="og:description" content="I build useful digital products, audit them hard, and ship what I learn." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://s2zxx0zxx.github.io/Satzzxzxx/" />
+  <link rel="canonical" href="https://s2zxx0zxx.github.io/Satzzxzxx/" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <title>Satzzxzxx — Builder & Product Creator</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="site-shell" id="top">
     <header class="site-header">
-      <a href="#top" class="brand">satzzxzxx</a>
-      <nav aria-label="Primary">
+      <a href="#top" class="brand" aria-label="Satzzxzxx home">satzzxzxx</a>
+      <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#about">About</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero section-pad">
-        <div class="hero-stage">
-          <div id="skillOrbit" class="skill-orbit" aria-label="Draggable technology stack"></div>
-          <div class="hero-content reveal">
-            <div class="avatar" aria-label="Satyam Kumar monogram">SK</div>
-            <div class="eyebrow"><span class="spark">✦</span> Satyam Kumar · Satzzxzxx</div>
-            <h1>I build useful digital products and turn ideas into real experiences.</h1>
-            <p class="hero-copy">Builder, creator and digital entrepreneur working across AI, finance, web, mobile and digital products.</p>
-            <div class="hero-actions">
-              <a class="primary-btn" href="#contact">✉ Contact Me</a>
-              <a class="text-btn" href="#work">View Work ↗</a>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content reveal">
+          <div class="avatar-wrap">
+            <div class="avatar">
+              <img src="https://avatars.githubusercontent.com/u/236218062?v=4" alt="Satyam Kumar / Satzzxzxx" />
             </div>
-            <a class="github-proof" href="https://github.com/S2zxx0zxx" target="_blank" rel="noreferrer">◉ github.com/S2zxx0zxx ↗</a>
+            <div class="identity-pill"><span class="spark-dot">✦</span> Satyam Kumar</div>
+            <a class="proof-pill" href="https://github.com/S2zxx0zxx" target="_blank" rel="noreferrer">
+              <span>◉</span><strong>@S2zxx0zxx</strong><span>on GitHub ↗</span>
+            </a>
           </div>
+
+          <h1 id="hero-title">I build useful digital products and ship what I learn.</h1>
+          <p class="hero-copy">Builder, creator, and digital entrepreneur working across AI, finance, web, and mobile. I research deeply, build fast, audit hard, and keep improving in public.</p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="#contact">✉ &nbsp; Contact Me</a>
+            <a class="secondary-link" href="#work">Explore the work ↘</a>
+          </div>
+        </div>
+
+        <div id="physicsZone" class="physics-zone" aria-label="Interactive draggable technology stack">
+          <button id="motionToggle" class="motion-toggle" type="button">◉ Enable phone motion</button>
         </div>
       </section>
 
-      <section id="work" class="section-pad bordered-section">
+      <section id="work" class="section-pad bordered-section reveal" aria-labelledby="building-title">
         <div class="section-heading-row">
-          <div>
-            <span class="kicker">CURRENTLY BUILDING</span>
-            <h2>Building, improving and shipping in public.</h2>
+          <div class="heading-copy">
+            <h2 id="building-title">Currently building</h2>
           </div>
-          <div class="live-label"><span class="pulse"></span> Active now</div>
+          <div class="live-label"><span class="live-dot"></span> Updated live</div>
         </div>
 
-        <div class="build-table">
-          <article class="build-row">
-            <div class="project-rank">01</div>
-            <div class="project-main">
-              <div class="project-title-row"><h3>FinCo-Pilot</h3><span class="project-type">Finance / AI</span></div>
-              <p>Privacy-first personal finance + AI cockpit for accounts, transactions, budgets, reports and intelligent workflows.</p>
-              <div class="stack-line">React · FastAPI · PostgreSQL · Redis · Docker · AI/MCP</div>
+        <div class="building-card">
+          <article class="build-item">
+            <div class="build-top">
+              <div class="number-box">1</div>
+              <div class="build-main">
+                <div class="build-title-row">
+                  <h3>FinCo-Pilot</h3>
+                  <span class="build-badge">BUILDING</span>
+                </div>
+                <p>A privacy-first personal finance and AI cockpit for accounts, transactions, budgets, reports, automation, and intelligent financial workflows.</p>
+                <div class="build-meta">Finance + AI · Production hardening · Full-stack product</div>
+              </div>
+              <a class="project-arrow" href="https://github.com/S2zxx0zxx/FinCo-pilot" target="_blank" rel="noreferrer" aria-label="Open FinCo-Pilot on GitHub">↗</a>
             </div>
-            <div class="project-status">● Production hardening</div>
-            <div class="indeterminate-track" aria-label="FinCo-Pilot build in progress"><span></span></div>
+            <div class="build-data">
+              <div class="data-cell">
+                <span class="data-label">Current phase</span>
+                <div class="data-value">Production hardening</div>
+                <div class="data-note">Auditing, polishing, and preparing the product for release.</div>
+              </div>
+              <div class="data-cell">
+                <span class="data-label">Progress</span>
+                <div class="data-value">ACTIVE</div>
+                <div class="live-progress" aria-label="FinCo-Pilot active development"></div>
+              </div>
+            </div>
           </article>
 
-          <article class="build-row">
-            <div class="project-rank">02</div>
-            <div class="project-main">
-              <div class="project-title-row"><h3>ToolsLab LLMs</h3><span class="project-type">AI / LLM</span></div>
-              <p>An LLM-powered tool lab focused on practical AI utilities, agent workflows and model-driven experiences.</p>
-              <div class="stack-line">LLMs · Agents · Web tools · AI workflows</div>
+          <article class="build-item">
+            <div class="build-top">
+              <div class="number-box">2</div>
+              <div class="build-main">
+                <div class="build-title-row">
+                  <h3>ToolsLab LLMs</h3>
+                  <span class="build-badge">BUILDING</span>
+                </div>
+                <p>An LLM-focused product lab for practical AI utilities, agent workflows, model-powered tools, and useful experiments.</p>
+                <div class="build-meta">LLMs + Agents · Active development · AI product lab</div>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
             </div>
-            <div class="project-status">● Active development</div>
-            <div class="indeterminate-track" aria-label="ToolsLab LLMs build in progress"><span></span></div>
+            <div class="build-data">
+              <div class="data-cell">
+                <span class="data-label">Current phase</span>
+                <div class="data-value">Core product build</div>
+                <div class="data-note">Shaping the system, workflows, and useful model-driven experiences.</div>
+              </div>
+              <div class="data-cell">
+                <span class="data-label">Progress</span>
+                <div class="data-value">ACTIVE</div>
+                <div class="live-progress" aria-label="ToolsLab LLMs active development"></div>
+              </div>
+            </div>
           </article>
         </div>
-        <p class="micro-note">Progress is shown as active rather than a guessed percentage. Add exact percentages whenever you want.</p>
       </section>
 
-      <section class="section-pad bordered-section">
-        <div class="section-heading-row compact">
+      <section class="section-pad bordered-section reveal" aria-labelledby="completed-title">
+        <div class="section-heading-row completed-heading">
           <div>
-            <span class="kicker">SOFTWARE STATS</span>
-            <h2>Completed products.</h2>
+            <span class="kicker">Software stats</span>
+            <h2 id="completed-title">Completed products</h2>
           </div>
-          <span class="small-muted">6 shipped / live projects</span>
+          <div class="shipped-label"><span class="status-dot"></span> Shipped</div>
         </div>
 
-        <div class="software-table" role="table" aria-label="Completed products">
-          <div class="software-head" role="row"><span>Product</span><span>Platform</span><span>Status</span></div>
-          <div class="software-row" role="row"><div><strong>FinCalc</strong><small>Indian finance calculator platform</small></div><span>Web</span><span class="done-status">✓ Shipped</span></div>
-          <div class="software-row" role="row"><div><strong>DigiRise India</strong><small>Digital agency & business platform</small></div><span>Web</span><span class="done-status">✓ Live</span></div>
-          <div class="software-row" role="row"><div><strong>Taskora AI</strong><small>Productivity, expense & AI mobile app</small></div><span>Flutter</span><span class="done-status">✓ Build verified</span></div>
-          <div class="software-row" role="row"><div><strong>Zenvy AI</strong><small>AI web product with backend</small></div><span>Web + Backend</span><span class="done-status">✓ Shipped</span></div>
-          <div class="software-row" role="row"><div><strong>Liquid Lounge</strong><small>Personal website / PWA</small></div><span>Web / PWA</span><span class="done-status">✓ Live</span></div>
-          <div class="software-row" role="row"><div><strong>GameMart Store</strong><small>Gaming & digital store platform</small></div><span>Web Store</span><span class="done-status">✓ Shipped</span></div>
+        <div class="completed-card">
+          <article class="completed-item">
+            <div class="completed-top">
+              <div class="completed-rank">1</div>
+              <div class="completed-copy"><h3>FinCalc</h3><p>Indian finance calculator platform for practical money calculations and finance content.</p></div>
+              <a class="completed-link" href="https://github.com/S2zxx0zxx/financeCalculator-Ind-v6.0-" target="_blank" rel="noreferrer" aria-label="Open FinCalc repository">↗</a>
+            </div>
+            <div class="completed-metrics"><div class="metric-block"><small>Platform</small><div class="platform-line"><span class="status-dot"></span> Web</div></div><div class="metric-block"><small>Status</small><div class="status-value good">LIVE</div></div></div>
+          </article>
+
+          <article class="completed-item">
+            <div class="completed-top">
+              <div class="completed-rank">2</div>
+              <div class="completed-copy"><h3>DigiRise India</h3><p>Digital agency and business platform built to present services, work, content, and growth systems.</p></div>
+              <a class="completed-link" href="https://github.com/S2zxx0zxx/DigiRise-India" target="_blank" rel="noreferrer" aria-label="Open DigiRise India repository">↗</a>
+            </div>
+            <div class="completed-metrics"><div class="metric-block"><small>Platform</small><div class="platform-line"><span class="status-dot"></span> Web</div></div><div class="metric-block"><small>Status</small><div class="status-value good">LIVE</div></div></div>
+          </article>
+
+          <article class="completed-item">
+            <div class="completed-top">
+              <div class="completed-rank">3</div>
+              <div class="completed-copy"><h3>Taskora AI</h3><p>Productivity, expense, and AI mobile experience built with Flutter and local-first workflows.</p></div>
+              <a class="completed-link" href="https://github.com/S2zxx0zxx/TaskoraAi" target="_blank" rel="noreferrer" aria-label="Open Taskora AI repository">↗</a>
+            </div>
+            <div class="completed-metrics"><div class="metric-block"><small>Platform</small><div class="platform-line"><span class="status-dot"></span> Flutter</div></div><div class="metric-block"><small>Status</small><div class="status-value good">VERIFIED</div></div></div>
+          </article>
+
+          <article class="completed-item">
+            <div class="completed-top">
+              <div class="completed-rank">4</div>
+              <div class="completed-copy"><h3>Zenvy AI</h3><p>AI web product with a dedicated backend, PWA support, and a focused product experience.</p></div>
+              <a class="completed-link" href="https://github.com/S2zxx0zxx/Zenvy-AI" target="_blank" rel="noreferrer" aria-label="Open Zenvy AI repository">↗</a>
+            </div>
+            <div class="completed-metrics"><div class="metric-block"><small>Platform</small><div class="platform-line"><span class="status-dot"></span> Web + Backend</div></div><div class="metric-block"><small>Status</small><div class="status-value good">SHIPPED</div></div></div>
+          </article>
+
+          <article class="completed-item">
+            <div class="completed-top">
+              <div class="completed-rank">5</div>
+              <div class="completed-copy"><h3>Liquid Lounge</h3><p>Personal website and progressive web experience with a polished, lightweight static architecture.</p></div>
+              <a class="completed-link" href="https://github.com/S2zxx0zxx/liquid-lounge" target="_blank" rel="noreferrer" aria-label="Open Liquid Lounge repository">↗</a>
+            </div>
+            <div class="completed-metrics"><div class="metric-block"><small>Platform</small><div class="platform-line"><span class="status-dot"></span> Web / PWA</div></div><div class="metric-block"><small>Status</small><div class="status-value good">LIVE</div></div></div>
+          </article>
+
+          <article class="completed-item">
+            <div class="completed-top">
+              <div class="completed-rank">6</div>
+              <div class="completed-copy"><h3>GameMart Store</h3><p>Gaming and digital store platform built around a direct, product-first shopping experience.</p></div>
+              <a class="completed-link" href="https://github.com/S2zxx0zxx/GameMart-Official" target="_blank" rel="noreferrer" aria-label="Open GameMart repository">↗</a>
+            </div>
+            <div class="completed-metrics"><div class="metric-block"><small>Platform</small><div class="platform-line"><span class="status-dot"></span> Web Store</div></div><div class="metric-block"><small>Status</small><div class="status-value good">SHIPPED</div></div></div>
+          </article>
         </div>
       </section>
 
-      <section class="section-pad bordered-section learning-section">
-        <span class="kicker">LEARNING IN PUBLIC</span>
-        <h2>Still learning. Always improving.</h2>
-        <p class="section-intro">I use real projects as the classroom — learning by researching, building, auditing and shipping.</p>
-        <div class="learning-list">
-          <div class="learning-item"><span class="learning-index">01</span><div><h3>AI Agents & LLM Systems</h3><p>Building smarter agent workflows and practical model-powered products.</p></div></div>
-          <div class="learning-item"><span class="learning-index">02</span><div><h3>Backend Architecture</h3><p>Designing cleaner, safer and more scalable product systems.</p></div></div>
-          <div class="learning-item"><span class="learning-index">03</span><div><h3>Security & Hardening</h3><p>Auditing real products for launch blockers and production risk.</p></div></div>
-          <div class="learning-item"><span class="learning-index">04</span><div><h3>Product Design</h3><p>Improving clarity, hierarchy, motion and overall user experience.</p></div></div>
-          <div class="learning-item"><span class="learning-index">05</span><div><h3>SEO & Growth</h3><p>Making useful products easier to discover, understand and grow.</p></div></div>
+      <section class="section-pad bordered-section learning-section reveal" aria-labelledby="learning-title">
+        <span class="kicker" style="color:#2f8f59">Learning in public</span>
+        <h2 id="learning-title">Still learning. Always improving.</h2>
+        <p class="section-intro">I use real projects as the classroom. Every build teaches me something new about systems, products, security, design, and growth.</p>
+
+        <div class="learning-card">
+          <article class="learning-row"><span class="learning-index">01</span><div class="learning-icon">AI</div><div class="learning-copy"><h3>AI Agents & LLM Systems</h3><p>Building smarter agent workflows and practical model-powered products.</p></div><span class="improving">↗ Improving</span></article>
+          <article class="learning-row"><span class="learning-index">02</span><div class="learning-icon">↯</div><div class="learning-copy"><h3>Backend Architecture</h3><p>Designing cleaner, safer, and more scalable systems behind real products.</p></div><span class="improving">↗ Improving</span></article>
+          <article class="learning-row"><span class="learning-index">03</span><div class="learning-icon">◇</div><div class="learning-copy"><h3>Security & Hardening</h3><p>Finding production risks, launch blockers, and weak points before users do.</p></div><span class="improving">↗ Improving</span></article>
+          <article class="learning-row"><span class="learning-index">04</span><div class="learning-icon">◉</div><div class="learning-copy"><h3>Product Design</h3><p>Improving hierarchy, interaction, motion, and the overall user experience.</p></div><span class="improving">↗ Improving</span></article>
+          <article class="learning-row"><span class="learning-index">05</span><div class="learning-icon">#</div><div class="learning-copy"><h3>SEO & Growth</h3><p>Making useful products easier to discover, understand, and grow.</p></div><span class="improving">↗ Improving</span></article>
         </div>
 
-        <div class="process-card">
-          <div class="process-header"><span>MY PROCESS</span><span>⚙</span></div>
-          <div class="process-flow">
-            <div><span class="process-icon">⌕</span><strong>Research</strong><span>Understand deeply</span></div><i>→</i>
-            <div><span class="process-icon">▦</span><strong>Build</strong><span>Turn ideas real</span></div><i>→</i>
-            <div><span class="process-icon">◈</span><strong>Audit</strong><span>Break & improve</span></div><i>→</i>
-            <div><span class="process-icon">↗</span><strong>Ship</strong><span>Release better</span></div>
+        <div class="process-wrap">
+          <span class="process-label">My process</span>
+          <div class="process-grid">
+            <div class="process-step"><span>01</span><strong>Research</strong><p>Understand the problem deeply.</p></div>
+            <div class="process-step"><span>02</span><strong>Build</strong><p>Turn the idea into something real.</p></div>
+            <div class="process-step"><span>03</span><strong>Audit</strong><p>Break it, test it, and improve it.</p></div>
+            <div class="process-step"><span>04</span><strong>Ship</strong><p>Release, learn, and iterate again.</p></div>
           </div>
-          <p>Research deeply. Build fast. Audit hard. Ship better.</p>
-        </div>
-      </section>
-
-      <section id="about" class="section-pad bordered-section about-section">
-        <span class="kicker">ABOUT ME</span>
-        <h2>I build products, brands and digital systems that solve real problems.</h2>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>I’m <strong>Satyam Kumar</strong>, also known as <strong>Satzzxzxx</strong> — a builder, creator and digital entrepreneur.</p>
-            <p>I work across AI tools, finance products, productivity apps, business websites and digital growth systems. I like turning messy ideas into useful products, then auditing them hard enough to make them better.</p>
-            <p>This portfolio is less about claiming mastery and more about showing the work: what I’m building, what I’ve shipped, and what I’m learning next.</p>
-          </div>
-          <div class="highlight-panel">
-            <div><strong>48</strong><span>GitHub repositories</span></div>
-            <div><strong>6</strong><span>Completed products</span></div>
-            <div><strong>2</strong><span>Currently building</span></div>
-            <div><strong>Web · Mobile · AI</strong><span>Core product focus</span></div>
-          </div>
+          <p class="process-mantra">Research deeply. Build fast. Audit hard. Ship better.</p>
         </div>
       </section>
 
-      <section class="section-pad bordered-section next-section">
-        <span class="kicker">NEXT FROM SATZZXZXX</span>
-        <h2>Still building.</h2>
-        <p>New products, experiments and updates are always in progress. The next ship is already being built.</p>
-        <div class="ship-line"><span></span><b>↗</b><span></span></div>
+      <section id="about" class="section-pad bordered-section about-section reveal" aria-labelledby="about-title">
+        <span class="kicker">About me</span>
+        <h2 id="about-title">I build in public with curiosity, discipline, and proof.</h2>
+        <div class="about-copy">
+          <p>I’m Satyam Kumar, also known as Satzzxzxx — a builder, creator, and digital entrepreneur. I work across AI tools, finance products, productivity apps, business websites, and digital growth systems.</p>
+          <p>I care about useful work more than loud claims. I like showing what is being built, what has shipped, what still needs improvement, and what each project teaches me along the way.</p>
+        </div>
+        <div class="stats-card" aria-label="Portfolio highlights">
+          <div class="stat-row"><strong data-count="2">0</strong><span>products in progress</span></div>
+          <div class="stat-row"><strong data-count="6">0</strong><span>completed products</span></div>
+          <div class="stat-row"><strong data-count="3">0</strong><span>web · mobile · AI product surfaces</span></div>
+        </div>
+      </section>
+
+      <section class="section-pad bordered-section next-section reveal" aria-labelledby="next-title">
+        <span class="kicker">Next from Satzzxzxx</span>
+        <h2 id="next-title">Still building.</h2>
+        <p>New products, experiments, and updates are always in motion. The next useful thing is already taking shape.</p>
+        <div class="ship-line" aria-hidden="true"><span></span><b>↗</b><span></span></div>
       </section>
     </main>
 
     <footer id="contact" class="footer">
       <div><strong>© <span id="year"></span> Satyam Kumar</strong><span>Developed by Satzzxzxx 🇮🇳</span></div>
-      <div class="footer-links"><a href="https://github.com/S2zxx0zxx" target="_blank" rel="noreferrer">GitHub</a><a href="#about">About</a><a href="#top">Back to top ↑</a></div>
+      <div class="footer-links">
+        <a href="https://github.com/S2zxx0zxx" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="#about">About</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </footer>
   </div>
+
   <script src="./app.js"></script>
 </body>
 </html>
