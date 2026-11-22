@@ -1,0 +1,44 @@
+name: Portfolio validation
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "portfolio-live.js"
+      - "data/public-repositories.json"
+      - "tests/**"
+      - ".github/workflows/portfolio-validate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "portfolio-live.js"
+      - "data/public-repositories.json"
+      - "tests/**"
+      - ".github/workflows/portfolio-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check browser scripts
+        run: |
+          node --check app.js
+          node --check portfolio-live.js
+      - name: Verify portfolio inventory and interactions
+        run: node --test tests/portfolio.test.cjs
