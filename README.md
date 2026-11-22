@@ -13,7 +13,7 @@ Then open `http://localhost:8080`. The portfolio is served from a subdirectory a
 ## Content map
 
 1. Original hero and twelve draggable technology icons (with optional phone motion).
-2. **Three Paths** mini workflow, routed through CSS animations:
+2. **Three Paths** compact monochrome square workflow with native expandable cards and moving white/silver CSS routes:
    - ARKYVON game engine → Chess, Carrom, Brain / IQ projects
    - Web / APK / PWA → FinCoPilot, ToolsLab LLMs, FinCalc, DigiRise, Zenvy
    - Blogs / Articles → [The Paisa Journal](https://thepaisajournal.blogspot.com/), [FinCalc Articles](https://satzzxzxx.me/blog/) and Labs
@@ -24,7 +24,7 @@ Then open `http://localhost:8080`. The portfolio is served from a subdirectory a
 7. Searchable public GitHub repository index (47 public at 22 Nov 2026), private count shown only as audited aggregate (11), no private repository names exposed.
 8. Original learning, process, about, motion and footer sections.
 
-The design includes compact mobile grid layouts, accessible links, reduced-motion handling and no heavy frontend framework. Project status tags are maintained editorially and do **not** indicate independent certification of live uptime, beta readiness, APK availability or individual feature activation.
+The design includes compact mobile grid layouts, accessible links, reduced-motion handling and no heavy frontend framework. The three route tiles remain square when closed; click or keyboard-expand each one to access all 14 original project links without losing the animation. The route UI uses no purple colors, images or JavaScript-driven motion. Project status tags are maintained editorially and do **not** indicate independent certification of live uptime, beta readiness, APK availability or individual feature activation.
 
 ## Dynamic repository index
 
