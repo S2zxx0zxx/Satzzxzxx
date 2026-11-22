@@ -409,3 +409,173 @@ h2{
 .repo-refresh:focus-visible{outline:3px solid rgba(81,104,255,.3);outline-offset:2px}
 .repo-list-right{display:inline-flex;align-items:center;gap:12px;flex-shrink:0}
 @media(max-width:480px){.repo-index-actions{gap:7px}.repo-index-actions>span{max-width:138px;white-space:normal;text-align:right}.repo-list-right{gap:7px}}
+
+
+/* Game-first portfolio: animated routes, compact showcase and editorial index. */
+.pathways-section{padding-top:65px;padding-bottom:76px}
+.pathways-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:25px}
+.pathways-head h2{font-size:clamp(29px,5vw,52px)}
+.pathways-head .kicker{margin-bottom:11px}
+.pathways-signal{display:inline-flex;align-items:center;gap:7px;font:600 11px var(--mono);color:#74746e;white-space:nowrap}
+.pathways-signal span{width:7px;height:7px;border-radius:50%;background:#7d67ff;box-shadow:0 0 0 3px rgba(124,91,245,.12);animation:route-pulse 2.8s ease-in-out infinite}
+.pathways-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pathway-card{position:relative;min-width:0;border-radius:21px;background:#171717;color:#f8f8f3;padding:20px 17px 17px;overflow:hidden;border:1px solid #2f2f33;box-shadow:0 14px 34px rgba(0,0,0,.065)}
+.pathway-card:before{content:'';position:absolute;right:-12px;top:20px;width:56px;height:56px;background:#a087ff;filter:blur(36px);opacity:.13;pointer-events:none}
+.pathway-head{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.pathway-icon{width:28px;height:28px;border:1px solid #555359;border-radius:9px;display:grid;place-items:center;background:#27252b;color:#ccbaff;font-size:20px}
+.pathway-kicker{color:#aca8ac;font:600 9px/1.3 var(--mono);text-align:right;letter-spacing:.04em}
+.pathway-card h3{font-size:clamp(17px,2.3vw,23px);letter-spacing:-.035em;margin:18px 0 5px;line-height:1.1;font-weight:800}
+.pathway-caption{font:10px/1.5 var(--mono);color:#adadb5;margin:0;min-height:30px}
+.pathway-route{position:relative;height:16px;margin:8px 0 11px;border-bottom:1px dashed rgba(186,168,255,.34)}
+.pathway-route:before{content:'';position:absolute;left:0;right:0;bottom:-2px;height:3px;background:linear-gradient(90deg,transparent,#ab8eff,transparent);background-size:46% 100%;background-repeat:no-repeat;animation:route-scan 3.2s ease-in-out infinite}
+.pathway-dot{position:absolute;left:0;bottom:-4px;width:7px;height:7px;border-radius:50%;background:#c5b7ff;box-shadow:0 0 11px #ad91ff;animation:route-travel 3.2s linear infinite}
+.pathway-card:nth-child(2) .pathway-dot,.pathway-card:nth-child(2) .pathway-route:before{animation-delay:-1.0s}
+.pathway-card:nth-child(3) .pathway-dot,.pathway-card:nth-child(3) .pathway-route:before{animation-delay:-2.0s}
+.pathway-nodes{position:relative;display:grid;gap:7px}
+.pathway-nodes:before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(#b393ff,#69666c,transparent);opacity:.65}
+.pathway-nodes a{position:relative;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:7px;padding:8px 9px 8px 20px;background:#27272b;border:1px solid #38373d;border-radius:9px;color:#e9e9e7;font:600 11px/1.3 var(--mono);overflow-wrap:anywhere;transition:background .2s,border-color .2s,transform .2s}
+.pathway-nodes a:before{content:'';position:absolute;left:2px;top:50%;width:7px;height:7px;transform:translateY(-50%);border-radius:50%;background:#a998ff;box-shadow:0 0 8px rgba(160,136,255,.5)}
+.pathway-nodes a:hover{background:#323138;border-color:#8e79e9;transform:translateX(2px)}
+.pathway-nodes a:focus-visible{outline:2px solid #d6c5ff;outline-offset:1px}
+.pathway-nodes a span:last-child:not(.pathway-pro){color:#c7b2ff;flex:none}
+.pathway-nodes a.pathway-primary{background:#332e3f;border-color:#6d5d8e;color:#fff}
+.pathway-pro{display:inline-flex;flex:none;border-radius:999px;padding:3px 6px;background:linear-gradient(115deg,#dbb669,#f5deaa 37%,#ad82e8 100%);color:#27212d;font:800 8px/1 var(--mono);letter-spacing:.02em;box-shadow:0 0 0 1px rgba(246,212,149,.35),0 0 10px rgba(164,109,238,.24)}
+.pathways-note{margin:12px 3px 0;color:#85857e;font:10px/1.7 var(--mono)}
+.secondary-game-links{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
+.secondary-game-links span{font:10px var(--mono);color:#7c7c76}
+.secondary-game-links a{font:700 10px var(--mono);padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:#fff}
+.secondary-game-links a:hover{border-color:#7672a4}
+.currently-section .build-item{padding:27px}
+.currently-section .build-top{grid-template-columns:65px 1fr auto;gap:17px}
+.currently-section .number-box{width:61px;height:61px;border-radius:15px;font-size:14px}
+.currently-section .build-title-row h3{font-size:25px}
+.currently-section .build-main p{margin-top:9px;font-size:13px}
+.currently-section .build-meta{margin-top:12px}
+.currently-section .build-data{margin-top:13px;gap:16px}
+.currently-section .data-cell{padding-top:12px}
+.currently-section .data-label{margin-bottom:6px}
+.currently-section .data-value{font-size:16px}
+.currently-section .live-progress{height:6px;margin-top:10px}
+/* The original fourth card style applies to all four, without replacing the site theme. */
+.frontier-grid{gap:11px}
+.frontier-card,.frontier-card-lead{background:#171717;color:#fff;border-color:#2e2e32}
+.frontier-card:hover{border-color:#6d5d9a;box-shadow:0 14px 35px rgba(28,25,40,.12)}
+.frontier-card .frontier-serial{color:#a8a8ab}
+.frontier-card p,.frontier-card-lead p{color:#b6b5bd}
+.frontier-card p.frontier-lead{color:#bcaaff}
+.frontier-card .frontier-glyph{color:#b6a4ff}
+.frontier-card .frontier-foot{border-top-color:#414148}
+.frontier-card .frontier-foot span{color:#aba9b3}
+.frontier-card .frontier-foot a{color:#dbc9ff}
+.frontier-card .phase-chip.active{background:#243a31;color:#8bedb6}
+.frontier-card .phase-chip.testing{background:#352944;color:#dfb8ff}
+.frontier-card .phase-chip.research{background:#352944;color:#dfb8ff}
+.frontier-card .phase-chip{font-size:9px}
+.frontier-card{min-height:240px;padding:20px}
+.frontier-card .frontier-symbol{font-size:47px;height:50px}
+.frontier-card .frontier-glyph{font-size:44px;margin-top:11px}
+.frontier-card h3{font-size:25px;margin:7px 0}
+.frontier-card p{font-size:11px;margin:4px 0 10px}
+.frontier-card .frontier-foot{padding-top:12px}
+.journal-section{padding-top:74px;padding-bottom:74px}
+.journal-panel{position:relative;padding:34px;border-radius:25px;background:#171717;color:#fff;overflow:hidden;border:1px solid #343139}
+.journal-panel:after{content:'';position:absolute;width:140px;height:140px;border-radius:50%;right:4%;top:-80px;background:#9872ec;filter:blur(70px);opacity:.22;pointer-events:none}
+.journal-overline{display:flex;gap:9px;align-items:center;margin-bottom:22px;letter-spacing:.14em;font:600 11px var(--mono);color:#c6b7dc}
+.journal-live{display:inline-block;width:7px;height:7px;border-radius:50%;background:#bc91ff;animation:route-pulse 2.6s ease-in-out infinite}
+.journal-content{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:30px;align-items:center}
+.journal-content h2{font-size:clamp(31px,5vw,52px);margin:0 0 15px}
+.journal-content p{font:13px/1.8 var(--mono);color:#c2c0c8;margin:0 0 15px}
+.journal-tags{display:flex;flex-wrap:wrap;gap:7px}
+.journal-tags span{padding:6px 9px;border-radius:999px;font:10px var(--mono);background:#302c39;color:#dec9fa;border:1px solid #514760}
+.journal-links{display:grid;gap:8px}
+.journal-links a{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;border-radius:11px;border:1px solid #66606b;font:700 11px/1.5 var(--mono);color:#f6f2ff}
+.journal-links a.journal-primary{color:#17111e;border-color:transparent;background:linear-gradient(115deg,#e6c47e,#c7a1ee)}
+.journal-links a:hover{filter:brightness(1.13)}
+.journal-disclosure{border-top:1px solid #3d3943;padding-top:16px;margin:21px 0 0;font:10px/1.65 var(--mono);color:#96929d}
+@keyframes route-travel{0%{left:0}100%{left:calc(100% - 7px)}}
+@keyframes route-scan{0%{background-position:-70% 0}100%{background-position:170% 0}}
+@keyframes route-pulse{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2)}}
+@media(max-width:760px){
+ .pathways-section{padding-top:46px;padding-bottom:60px}
+ .pathway-card{padding:14px 11px;border-radius:15px}
+ .pathway-card h3{font-size:15px;margin:13px 0 5px}
+ .pathway-caption{font-size:9px}
+ .pathway-nodes a{font-size:10px}
+ .journal-content{grid-template-columns:1fr;gap:17px}
+ .journal-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .journal-panel{padding:25px}
+ .frontier-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .frontier-card{min-height:200px}
+}
+@media(max-width:480px){
+ .site-header nav{gap:10px;font-size:11px}
+ .pathways-section{padding-top:32px;padding-bottom:44px}
+ .pathways-head{margin-bottom:16px;gap:8px}
+ .pathways-head h2{font-size:27px}
+ .pathways-head .kicker{font-size:9px}
+ .pathways-signal{font-size:9px}
+ .pathways-grid{gap:6px}
+ .pathway-card{padding:10px 7px;border-radius:13px}
+ .pathway-head{gap:3px}
+ .pathway-icon{width:23px;height:23px;font-size:15px;border-radius:6px}
+ .pathway-kicker{font-size:7px}
+ .pathway-card h3{font-size:12px;letter-spacing:-.04em;min-height:26px;margin:10px 0 2px}
+ .pathway-caption{font-size:8px;min-height:28px}
+ .pathway-route{margin:3px 0 9px;height:12px}
+ .pathway-nodes{gap:5px}
+ .pathway-nodes a{padding:7px 4px 7px 12px;font-size:8.4px;letter-spacing:-.03em;min-height:30px;border-radius:7px}
+ .pathway-nodes a:before{left:1px;width:6px;height:6px}
+ .pathway-nodes:before{left:4px}
+ .pathway-pro{font-size:6.5px;padding:3px 4px}
+ .pathways-note{font-size:9px}
+ .currently-section{padding-top:44px;padding-bottom:46px}
+ .currently-section .section-heading-row{gap:10px;margin-bottom:16px}
+ .currently-section h2{font-size:33px}
+ .currently-section .frontier-intro{margin-top:12px;font-size:11px}
+ .currently-section .build-item{padding:14px 11px}
+ .currently-section .build-top{grid-template-columns:35px 1fr auto;gap:9px}
+ .currently-section .number-box{width:34px;height:34px;border-radius:9px;font-size:9px}
+ .currently-section .build-title-row h3{font-size:16px;line-height:1.15}
+ .currently-section .build-badge{padding:4px 6px;font-size:8px}
+ .currently-section .build-main p{font-size:10px;line-height:1.5;margin-top:7px}
+ .currently-section .build-meta{font-size:9px;margin-top:6px}
+ .currently-section .build-data{display:none}
+ .currently-section .project-arrow{grid-column:auto;margin-top:0;font-size:17px}
+ .secondary-game-links{margin-top:10px;gap:6px}
+ .secondary-game-links span{font-size:9px}
+ .secondary-game-links a{font-size:9px;padding:7px 8px}
+ .frontier-section{padding-top:44px;padding-bottom:44px}
+ .frontier-section .section-heading-row{margin-bottom:14px}
+ .frontier-section h2{font-size:32px}
+ .frontier-section .frontier-intro{margin-top:10px;font-size:10px}
+ .frontier-grid{gap:7px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .frontier-card{min-height:167px;padding:11px 9px;border-radius:13px}
+ .frontier-card .frontier-serial{font-size:7px}
+ .frontier-card .phase-chip{font-size:7px;padding:4px 6px;gap:4px}
+ .frontier-card .phase-chip:before{width:4px;height:4px}
+ .frontier-card .frontier-symbol{font-size:29px;height:30px;margin-top:6px}
+ .frontier-card .frontier-symbol span{font-size:12px}
+ .frontier-card .frontier-glyph{font-size:30px;margin-top:7px}
+ .frontier-card h3{font-size:18px;margin:7px 0 5px}
+ .frontier-card p{font-size:9px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .frontier-card .frontier-foot{padding-top:7px;margin-top:auto}
+ .frontier-card .frontier-foot span{display:none}
+ .frontier-card .frontier-foot a{font-size:10px}
+ .frontier-more{margin-top:10px;padding:12px}
+ .frontier-more-heading{margin-bottom:10px}
+ .frontier-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .frontier-links a{font-size:9px;padding:10px 8px}
+ .journal-section{padding-top:44px;padding-bottom:44px}
+ .journal-panel{padding:20px;border-radius:16px}
+ .journal-overline{font-size:9px;margin-bottom:11px}
+ .journal-content h2{font-size:31px}
+ .journal-content p{font-size:11px}
+ .journal-tags span{font-size:9px}
+ .journal-links{grid-template-columns:1fr;gap:7px}
+ .journal-links a{font-size:10px;padding:10px}
+ .journal-disclosure{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pathways-signal span,.pathway-route:before,.pathway-dot,.journal-live{animation:none!important}
+ .pathway-dot{left:50%}
+}
