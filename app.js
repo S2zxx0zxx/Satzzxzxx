@@ -34,7 +34,9 @@ function bodySize() {
 
 function createBodies() {
   if (!physicsZone) return;
-  physicsZone.innerHTML = '';
+  // Keep the existing motion control in place; replace only physics tokens.
+  physicsZone.querySelectorAll('.physics-token').forEach(token => token.remove());
+  bodies.length = 0;
   const seeds = [
     [.09,.03], [.17,.20], [.07,.38], [.19,.52], [.28,.67], [.38,.31],
     [.62,.08], [.75,.22], [.88,.05], [.82,.42], [.69,.58], [.91,.67]
@@ -291,16 +293,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
     event.preventDefault();
     target.scrollIntoView({behavior:prefersReducedMotion?'auto':'smooth',block:'start'});
   });
-});
-
-// GitHub redirects are intentionally disabled for now while keeping the visual UI unchanged.
-document.querySelectorAll('a[href*="github.com"]').forEach(link=>{
-  link.removeAttribute('href');
-  link.removeAttribute('target');
-  link.removeAttribute('rel');
-  link.setAttribute('aria-disabled','true');
-  link.style.cursor='default';
-  link.addEventListener('click',event=>event.preventDefault());
 });
 
 const year = document.getElementById('year');
