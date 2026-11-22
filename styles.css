@@ -579,3 +579,6 @@ h2{
  .pathways-signal span,.pathway-route:before,.pathway-dot,.journal-live{animation:none!important}
  .pathway-dot{left:50%}
 }
+
+.apk-badge{display:inline-flex;vertical-align:middle;align-items:center;padding:4px 6px;border-radius:99px;letter-spacing:.02em;color:#211827;background:linear-gradient(105deg,#e9c976,#f3dca1 40%,#ad83ef);box-shadow:0 0 0 1px rgba(255,229,173,.32);font:800 8px/1 var(--mono);white-space:nowrap}
+@media(max-width:480px){.apk-badge{font-size:6px;padding:3px 4px}}
