@@ -132,7 +132,7 @@ test('three-lane routing workflow precedes current development and has animated 
   const start = html.indexOf('id="pathways"');
   assert.ok(start > 0 && start < html.indexOf('id="work"'));
   const workflow = html.slice(start, html.indexOf('id="work"', start));
-  assert.equal((workflow.match(/class="pathway-card"/g) || []).length, 3);
+  assert.equal((workflow.match(/<details class="pathway-card"/g) || []).length, 3);
   for (const name of ['Game Engine', 'Web / APK', 'Blogs / Articles',
     'Global-Chess-Online-PVP-', 'thepaisajournal.blogspot.com', 'pathway-dot']) {
     assert.ok(workflow.includes(name), name);
@@ -157,4 +157,63 @@ test('phone-first styling keeps game cards in a compact two-column layout', () =
   assert.match(css, /\.pathways-grid\{gap:6px\}/);
   assert.match(css, /\.currently-section \.build-data\{display:none\}/);
   assert.match(css, /\.apk-badge/);
+});
+
+
+test('all three routes are compact native interactive squares, not tall columns or images', () => {
+  const start = html.indexOf('id="pathways"');
+  const end = html.indexOf('id="work"', start);
+  const route = html.slice(start, end);
+  assert.equal((route.match(/<details class="pathway-card"/g) || []).length, 3);
+  assert.equal((route.match(/<summary class="pathway-summary"/g) || []).length, 3);
+  assert.equal((route.match(/<span class="pathway-route"/g) || []).length, 3);
+  assert.equal((route.match(/<span class="pathway-dot"/g) || []).length, 3);
+  assert.equal((route.match(/class="pathway-nodes"/g) || []).length, 3);
+  assert.equal((route.match(/<a /g) || []).length, 14);
+  assert.doesNotMatch(route, /<img\b|<canvas\b|<video\b/);
+  assert.match(css, /\.pathway-summary\{[^}]*aspect-ratio:1\/1/);
+  assert.match(css, /\.pathways-grid\{[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+});
+
+test('the route alone has a strictly neutral palette, including dots, labels and APK badges', () => {
+  const start = css.indexOf('/* Native expandable square route cards');
+  const end = css.indexOf('.secondary-game-links{', start);
+  assert.ok(start >= 0 && end > start);
+  const routeStyle = css.slice(start, end);
+  assert.doesNotMatch(routeStyle, /#(?:[0-9a-f]{3})?\b(?:a087ff|ab8eff|c5b7ff|ad91ff|a998ff|b393ff|7d67ff|ccbaff)\b/i);
+  const hexColors = [...routeStyle.matchAll(/#([0-9a-f]{6})\b/gi)];
+  for (const [, hex] of hexColors) {
+    const channels = [0, 2, 4].map(offset => parseInt(hex.slice(offset, offset + 2), 16));
+    assert.ok(Math.max(...channels) - Math.min(...channels) <= 12,
+      'Route color must be monochrome or neutral gray: #' + hex);
+  }
+  assert.match(routeStyle, /background:#fff/);
+  assert.match(routeStyle, /background:#eee/);
+  assert.match(css, /\.apk-badge\{[^}]*background:#f2f2f2/);
+  assert.doesNotMatch(css, /\.apk-badge\{[^}]*gradient\(/);
+  assert.match(css, /\.pathway-pro\{[^}]*background:#eee/);
+});
+
+test('white route dots and live routing bars continue moving in pure CSS, with reduced-motion support', () => {
+  assert.match(css, /\.pathway-dot\{[^}]*animation:route-travel/);
+  assert.match(css, /\.pathway-route::before\{[^}]*animation:route-scan/);
+  assert.match(css, /@keyframes route-travel/);
+  assert.match(css, /@keyframes route-scan\{0%\{transform:translateX\(0\)\}100%\{transform:translateX\(300%\)\}\}/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  assert.match(css, /\.pathway-dot\{animation:none!important\}/);
+  assert.match(css, /\.pathway-card\[open\] \.pathway-expand-icon/);
+});
+
+test('no other page components or route destinations are removed by the size reduction', () => {
+  const route = html.slice(html.indexOf('id="pathways"'),html.indexOf('id="work"'));
+  for (const name of ['ARKYVON', 'Chess', 'Carrom', 'Brain / IQ',
+    'FinCoPilot', 'ToolsLab', 'FinCalc', 'DigiRise', 'Zenvy AI',
+    'Paisa Journal', 'Money Guides', 'FinCalc Blog', 'Labs / Research']) {
+    assert.ok(route.includes(name), name);
+  }
+  assert.match(route, /<span class="pathway-pro">PRO<\/span>/);
+  assert.match(route, /<span class="pathway-pro">PLUS<\/span>/);
+  for (const id of ['physicsZone', 'work', 'projects', 'journal', 'repositories']) {
+    assert.ok(html.includes('id="' + id + '"'), id);
+  }
 });
