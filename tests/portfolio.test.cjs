@@ -181,7 +181,12 @@ test('the route alone has a strictly neutral palette, including dots, labels and
   assert.ok(start >= 0 && end > start);
   const routeStyle = css.slice(start, end);
   assert.doesNotMatch(routeStyle, /#(?:[0-9a-f]{3})?\b(?:a087ff|ab8eff|c5b7ff|ad91ff|a998ff|b393ff|7d67ff|ccbaff)\b/i);
-  assert.doesNotMatch(routeStyle, /#(?:[0-9a-f]{3}){1,2}\b/i); // Entire route deliberately uses 6-digit hex only.
+  const hexColors = [...routeStyle.matchAll(/#([0-9a-f]{6})\b/gi)];
+  for (const [, hex] of hexColors) {
+    const channels = [0, 2, 4].map(offset => parseInt(hex.slice(offset, offset + 2), 16));
+    assert.ok(Math.max(...channels) - Math.min(...channels) <= 12,
+      'Route color must be monochrome or neutral gray: #' + hex);
+  }
   assert.match(routeStyle, /background:#fff/);
   assert.match(routeStyle, /background:#eee/);
   assert.match(css, /\.apk-badge\{[^}]*background:#f2f2f2/);
