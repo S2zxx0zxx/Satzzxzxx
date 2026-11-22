@@ -1,31 +1,41 @@
-# Satzzxzxx Portfolio — Static Build
+# Satzzxzxx Portfolio — Game-first, PWA & Editorial Showcase
 
-A deployment-ready single-page portfolio for Satyam Kumar / Satzzxzxx, strongly inspired by the build-in-public structure and interaction language of pcships.com while using original layout details and the user's own content.
+A dependency-free personal portfolio for Satyam Kumar / Satzzxzxx. Preserves the original warm, minimal design language, interactive draggable technology icons, and shipped project archive while foregrounding **game-engine development, playable games, web/PWA products and digital finance articles**.
 
-## Run locally
-Open `index.html` directly, or serve the folder with any static server.
+## Local preview
 
 ```bash
 python -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Then open `http://localhost:8080`. The portfolio is served from a subdirectory at its GitHub Pages URL, so scripts and local JSON use relative asset paths.
 
-## Deploy
-Upload the folder directly to Netlify, Vercel static hosting, GitHub Pages, Cloudflare Pages, Firebase Hosting, or any standard web server.
+## Content map
 
-## Included
-- Sticky header with Work / About anchors
-- Hero with Satyam / Satzzxzxx identity
-- 12 draggable technology icons
-- Currently Building: FinCo-Pilot + ToolsLab LLMs
-- Completed: FinCalc, DigiRise India, Taskora AI, Zenvy AI, Liquid Lounge, GameMart Store
-- Learning in Public
-- Research → Build → Audit → Ship process
-- About + highlights
-- Coming Soon section
-- Responsive mobile/tablet layout
-- Reduced-motion accessibility support
+1. Original hero and twelve draggable technology icons (with optional phone motion).
+2. **Three Paths** mini workflow, routed through CSS animations:
+   - ARKYVON game engine → Chess, Carrom, Brain / IQ projects
+   - Web / APK / PWA → FinCoPilot, ToolsLab LLMs, FinCalc, DigiRise, Zenvy
+   - Blogs / Articles → [The Paisa Journal](https://thepaisajournal.blogspot.com/), [FinCalc Articles](https://satzzxzxx.me/blog/) and Labs
+3. **Currently building:** ARKYVON and Global Chess.
+4. **Engineering frontier:** four compact black cards. ARKYVON / Chess **BUILDING**; LiveClip Zero / OpenXdrive **TESTING**.
+5. **Shipped products:** original six products, plus FinCoPilot and ToolsLab = eight cards. PWA platform labels only where source includes a manifest or service-worker setup. Old LIVE labels renamed VERIFIED as portfolio classifications.
+6. The Paisa Journal editorial feature with language chips, links and product relationship disclosure.
+7. Searchable public GitHub repository index (47 public at 22 Nov 2026), private count shown only as audited aggregate (11), no private repository names exposed.
+8. Original learning, process, about, motion and footer sections.
 
-## Accuracy note
-No fake user counts or completion percentages are included. The active project progress treatment is intentionally non-numeric until exact values are provided.
+The design includes compact mobile grid layouts, accessible links, reduced-motion handling and no heavy frontend framework. Project status tags are maintained editorially and do **not** indicate independent certification of live uptime, beta readiness, APK availability or individual feature activation.
+
+## Dynamic repository index
+
+`portfolio-live.js` requests public repos through the unauthenticated GitHub API and caches in session storage for 15 minutes. On API failure it falls back to `data/public-repositories.json`. Private repository names, secrets and GitHub API tokens are never inserted into the site.
+
+## Validation
+
+```bash
+node --check app.js
+node --check portfolio-live.js
+node --test tests/portfolio.test.cjs
+```
+
+A PR/push validation workflow also runs these checks when GitHub Actions is available. Production deploy uses the existing GitHub Pages repository configuration.
