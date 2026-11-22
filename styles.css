@@ -310,3 +310,94 @@ h2{
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+
+/* 2026 engineering frontier and public inventory: additive to the original design. */
+.frontier-section .heading-copy,.repository-section .heading-copy{max-width:760px}
+.frontier-intro{max-width:720px;margin:24px 0 0;color:#7b7b74;font-family:var(--mono);font-size:14px;line-height:1.85}
+.section-chip{align-self:flex-end;display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:13px 17px;color:#55554e;font-family:var(--mono);font-size:12px;white-space:nowrap;transition:transform .2s,border-color .2s}
+.section-chip:hover{transform:translateY(-2px);border-color:var(--ink)}
+.frontier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.frontier-card{position:relative;min-width:0;min-height:345px;padding:29px;border:1px solid var(--line);border-radius:24px;background:var(--card);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 18px 45px rgba(20,20,20,.025);transition:transform .22s,border-color .22s,box-shadow .22s}
+.frontier-card:hover{transform:translateY(-3px);border-color:var(--line-dark);box-shadow:0 24px 48px rgba(20,20,20,.055)}
+.frontier-card-lead{background:#171717;color:#fff;border-color:#171717}
+.frontier-topline{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.frontier-serial{font-family:var(--mono);letter-spacing:.09em;color:#84847d;font-size:10px;font-weight:600}
+.frontier-card-lead .frontier-serial{color:#bcbcb4}
+.phase-chip{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:7px 10px;border-radius:999px;background:#e8f8ef;color:#288957;font:600 10px var(--mono)}
+.phase-chip::before{content:'';height:6px;width:6px;border-radius:50%;background:currentColor}
+.phase-chip.research{background:#302a47;color:#c6b7ff}
+.frontier-card h3{margin:12px 0;font-size:clamp(26px,3.8vw,37px);font-weight:800;letter-spacing:-.05em}
+.frontier-card p{margin:4px 0 14px;color:#797972;font-size:13px;line-height:1.72}
+.frontier-card-lead p{color:#cacac1}
+.frontier-card p.frontier-lead{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#a6a6a3}
+.frontier-symbol{height:75px;margin-top:14px;font-family:var(--sans);font-size:69px;line-height:1;font-weight:800;letter-spacing:-.12em}
+.frontier-symbol span{font-size:24px;vertical-align:top;letter-spacing:0;color:#a594ff}
+.frontier-glyph{margin-top:20px;font:500 66px/1 var(--sans);color:#515e8c}
+.frontier-foot{margin-top:auto;padding-top:21px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.frontier-foot span{max-width:70%;color:#90908a;font:500 10px/1.6 var(--mono)}
+.frontier-foot a{flex-shrink:0;font:700 12px var(--mono);color:#303caa;text-underline-offset:4px}
+.frontier-foot a:hover{text-decoration:underline}
+.frontier-card-lead .frontier-foot{border-color:#434343}
+.frontier-card-lead .frontier-foot a{color:#d5dcff}
+.frontier-more{margin-top:24px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#f8f8f4}
+.frontier-more-heading{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:18px}
+.frontier-more-heading strong{font-size:16px;letter-spacing:-.02em}
+.frontier-more-heading>span{font:11px var(--mono);color:#888880}
+.frontier-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.frontier-links a{min-width:0;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #e3e3dc;border-radius:12px;background:#fff;padding:14px 15px;font:600 11px var(--mono);transition:border-color .2s,transform .2s}
+.frontier-links a:hover{border-color:#9d9d98;transform:translateY(-1px)}
+.frontier-links a span{color:#5666c8;font-size:15px}
+.repo-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:23px;overflow:hidden;background:#fff}
+.repo-metric{min-width:0;min-height:152px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px 12px;border-right:1px solid var(--line)}
+.repo-metric:last-child{border-right:0}
+.repo-metric strong{font:800 clamp(32px,5vw,48px)/1 var(--sans);letter-spacing:-.05em}
+.repo-metric span{margin-top:12px;color:#7b7b75;font:11px/1.5 var(--mono);text-align:center}
+.repo-explorer{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.repo-explorer>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:23px 25px;cursor:pointer;list-style:none;font-size:15px;font-weight:800;letter-spacing:-.02em}
+.repo-explorer>summary::-webkit-details-marker{display:none}
+.repo-explorer>summary:focus-visible{outline:3px solid #5168ff;outline-offset:-5px}
+.repo-summary-right{display:inline-flex;align-items:center;gap:12px;color:#73736c;font:10px var(--mono);white-space:nowrap}
+.repo-summary-right>span:last-child{font-size:20px;color:#292929;transition:transform .2s}
+.repo-explorer[open] .repo-summary-right>span:last-child{transform:rotate(45deg)}
+.repo-explorer-inner{padding:24px;border-top:1px solid var(--line)}
+.repo-controls{display:grid;grid-template-columns:1.5fr 1fr;gap:14px}
+.repo-control{display:flex;flex-direction:column;gap:9px;font:600 11px var(--mono);color:#6e6e66}
+.repo-control input,.repo-control select{width:100%;min-width:0;min-height:50px;border:1px solid var(--line);border-radius:12px;background:#fbfbf8;color:var(--ink);padding:0 14px;font:12px var(--mono)}
+.repo-control input:focus-visible,.repo-control select:focus-visible{outline:3px solid rgba(81,104,255,.25);outline-offset:1px;border-color:#5368ff}
+.repo-index-meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin:20px 0 14px;font:11px/1.5 var(--mono);color:#85857e}
+.repo-index-meta>span:first-child{font-weight:700;color:#333}
+.repo-list{margin:0;padding:0;list-style:none;display:grid;gap:8px;max-height:680px;overflow:auto;overscroll-behavior:contain}
+.repo-list li{min-width:0}
+.repo-list a,.repo-list .repo-empty{display:flex;justify-content:space-between;gap:12px;align-items:center;min-width:0;padding:14px 16px;border:1px solid #e9e9e3;border-radius:12px;background:#fcfcfa}
+.repo-list a:hover{border-color:#c2c2bc;background:#fff}
+.repo-list .repo-name{min-width:0;font-weight:750;font-size:12px;overflow-wrap:anywhere}
+.repo-list .repo-area{font:10px/1.5 var(--mono);color:#77776f;white-space:nowrap}
+.repo-list .repo-link-arrow{color:#5968b7;font-size:16px}
+.repo-index-note{margin:16px 0 0;font:11px/1.7 var(--mono);color:#888880}
+.repo-index-note a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){
+ .frontier-grid{grid-template-columns:1fr}
+ .frontier-card{min-height:305px;padding:26px}
+ .frontier-intro{font-size:12px}
+ .frontier-more-heading{align-items:flex-start;flex-direction:column;gap:7px}
+ .section-chip{align-self:flex-start}
+ .repo-explorer-inner{padding:18px}
+ .repo-metric{min-height:124px}
+}
+@media(max-width:480px){
+ .frontier-card{min-height:290px;padding:22px}
+ .frontier-card h3{font-size:30px}
+ .frontier-links{grid-template-columns:1fr}
+ .frontier-more{padding:18px}
+ .repo-overview{grid-template-columns:1fr 1fr}
+ .repo-metric{min-height:112px;border-bottom:1px solid var(--line)}
+ .repo-metric:nth-child(2){border-right:0}
+ .repo-metric:nth-child(3){grid-column:1/-1;border-bottom:0}
+ .repo-metric strong{font-size:34px}
+ .repo-metric span{font-size:10px}
+ .repo-controls{grid-template-columns:1fr}
+ .repo-explorer>summary{padding:18px;font-size:12px}
+ .repo-summary-right{gap:5px;font-size:9px}
+ .repo-list .repo-area{font-size:9px;white-space:normal;text-align:right}
+}
