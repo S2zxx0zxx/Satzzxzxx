@@ -411,36 +411,45 @@ h2{
 @media(max-width:480px){.repo-index-actions{gap:7px}.repo-index-actions>span{max-width:138px;white-space:normal;text-align:right}.repo-list-right{gap:7px}}
 
 
-/* Game-first portfolio: animated routes, compact showcase and editorial index. */
-.pathways-section{padding-top:65px;padding-bottom:76px}
-.pathways-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:25px}
+/* Native expandable square route cards: black, white and silver only. */
+.pathways-section{padding-top:51px;padding-bottom:54px}
+.pathways-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px}
 .pathways-head h2{font-size:clamp(29px,5vw,52px)}
-.pathways-head .kicker{margin-bottom:11px}
+.pathways-head .kicker{margin-bottom:10px}
 .pathways-signal{display:inline-flex;align-items:center;gap:7px;font:600 11px var(--mono);color:#74746e;white-space:nowrap}
-.pathways-signal span{width:7px;height:7px;border-radius:50%;background:#7d67ff;box-shadow:0 0 0 3px rgba(124,91,245,.12);animation:route-pulse 2.8s ease-in-out infinite}
-.pathways-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.pathway-card{position:relative;min-width:0;border-radius:21px;background:#171717;color:#f8f8f3;padding:20px 17px 17px;overflow:hidden;border:1px solid #2f2f33;box-shadow:0 14px 34px rgba(0,0,0,.065)}
-.pathway-card:before{content:'';position:absolute;right:-12px;top:20px;width:56px;height:56px;background:#a087ff;filter:blur(36px);opacity:.13;pointer-events:none}
-.pathway-head{display:flex;justify-content:space-between;align-items:center;gap:6px}
-.pathway-icon{width:28px;height:28px;border:1px solid #555359;border-radius:9px;display:grid;place-items:center;background:#27252b;color:#ccbaff;font-size:20px}
-.pathway-kicker{color:#aca8ac;font:600 9px/1.3 var(--mono);text-align:right;letter-spacing:.04em}
-.pathway-card h3{font-size:clamp(17px,2.3vw,23px);letter-spacing:-.035em;margin:18px 0 5px;line-height:1.1;font-weight:800}
-.pathway-caption{font:10px/1.5 var(--mono);color:#adadb5;margin:0;min-height:30px}
-.pathway-route{position:relative;height:16px;margin:8px 0 11px;border-bottom:1px dashed rgba(186,168,255,.34)}
-.pathway-route:before{content:'';position:absolute;left:0;right:0;bottom:-2px;height:3px;background:linear-gradient(90deg,transparent,#ab8eff,transparent);background-size:46% 100%;background-repeat:no-repeat;animation:route-scan 3.2s ease-in-out infinite}
-.pathway-dot{position:absolute;left:0;bottom:-4px;width:7px;height:7px;border-radius:50%;background:#c5b7ff;box-shadow:0 0 11px #ad91ff;animation:route-travel 3.2s linear infinite}
-.pathway-card:nth-child(2) .pathway-dot,.pathway-card:nth-child(2) .pathway-route:before{animation-delay:-1.0s}
-.pathway-card:nth-child(3) .pathway-dot,.pathway-card:nth-child(3) .pathway-route:before{animation-delay:-2.0s}
-.pathway-nodes{position:relative;display:grid;gap:7px}
-.pathway-nodes:before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(#b393ff,#69666c,transparent);opacity:.65}
-.pathway-nodes a{position:relative;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:7px;padding:8px 9px 8px 20px;background:#27272b;border:1px solid #38373d;border-radius:9px;color:#e9e9e7;font:600 11px/1.3 var(--mono);overflow-wrap:anywhere;transition:background .2s,border-color .2s,transform .2s}
-.pathway-nodes a:before{content:'';position:absolute;left:2px;top:50%;width:7px;height:7px;transform:translateY(-50%);border-radius:50%;background:#a998ff;box-shadow:0 0 8px rgba(160,136,255,.5)}
-.pathway-nodes a:hover{background:#323138;border-color:#8e79e9;transform:translateX(2px)}
-.pathway-nodes a:focus-visible{outline:2px solid #d6c5ff;outline-offset:1px}
-.pathway-nodes a span:last-child:not(.pathway-pro){color:#c7b2ff;flex:none}
-.pathway-nodes a.pathway-primary{background:#332e3f;border-color:#6d5d8e;color:#fff}
-.pathway-pro{display:inline-flex;flex:none;border-radius:999px;padding:3px 6px;background:linear-gradient(115deg,#dbb669,#f5deaa 37%,#ad82e8 100%);color:#27212d;font:800 8px/1 var(--mono);letter-spacing:.02em;box-shadow:0 0 0 1px rgba(246,212,149,.35),0 0 10px rgba(164,109,238,.24)}
+.pathways-signal span{width:8px;height:8px;border-radius:50%;background:#666;box-shadow:0 0 0 3px rgba(50,50,50,.14);animation:route-pulse 2.8s ease-in-out infinite}
+.pathways-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;align-items:start}
+.pathway-card{position:relative;min-width:0;overflow:hidden;border:1px solid #4a4a4a;border-radius:20px;background:#171717;color:#fafafa;box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.pathway-card[open]{border-color:#aaa;box-shadow:0 16px 40px rgba(0,0,0,.13)}
+.pathway-summary{display:flex;flex-direction:column;aspect-ratio:1/1;min-height:0;padding:18px 17px;list-style:none;cursor:pointer}
+.pathway-summary::-webkit-details-marker{display:none}
+.pathway-summary::marker{content:""}
+.pathway-summary:focus-visible{outline:2px solid #fff;outline-offset:-5px;border-radius:18px}
+.pathway-head{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.pathway-icon{width:30px;height:30px;border:1px solid #777;border-radius:9px;display:grid;place-items:center;background:#2b2b2b;color:#f5f5f5;font-size:20px}
+.pathway-kicker{color:#bbb;font:600 10px/1.3 var(--mono);text-align:right;letter-spacing:.045em}
+.pathway-title{display:block;font:800 clamp(17px,2.25vw,23px)/1.12 var(--sans);letter-spacing:-.035em;margin:15px 0 6px}
+.pathway-caption{display:block;font:10px/1.45 var(--mono);color:#bababa;min-height:17px}
+.pathway-route{display:block;position:relative;height:15px;margin:9px 0 8px;border-bottom:1px dashed #888;flex:none}
+.pathway-route::before{content:'';position:absolute;bottom:-2px;left:0;width:25%;height:3px;background:#f5f5f5;box-shadow:0 0 6px rgba(255,255,255,.5);animation:route-scan 3.2s linear infinite}
+.pathway-dot{position:absolute;left:0;bottom:-4px;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 9px rgba(255,255,255,.75);animation:route-travel 3.2s linear infinite}
+.pathway-card:nth-child(2) .pathway-dot,.pathway-card:nth-child(2) .pathway-route::before{animation-delay:-1.05s}
+.pathway-card:nth-child(3) .pathway-dot,.pathway-card:nth-child(3) .pathway-route::before{animation-delay:-2.1s}
+.pathway-teaser{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#ddd;font:600 10px/1.35 var(--mono);margin:4px 0 0}
+.pathway-expand{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:auto;padding-top:10px;color:#f8f8f8;font:700 10px/1.3 var(--mono)}
+.pathway-expand-icon{font:400 18px/1 var(--sans);transition:transform .2s}
+.pathway-card[open] .pathway-expand-icon{transform:rotate(45deg)}
+.pathway-nodes{position:relative;display:grid;gap:7px;padding:13px 13px 16px;border-top:1px solid #454545;animation:route-panel-enter .2s ease-out both}
+.pathway-nodes::before{content:'';position:absolute;left:19px;top:20px;bottom:25px;width:1px;background:#777}
+.pathway-nodes a{position:relative;min-width:0;min-height:30px;display:flex;align-items:center;justify-content:space-between;gap:7px;padding:8px 9px 8px 20px;background:#272727;border:1px solid #494949;border-radius:9px;color:#f2f2f2;font:600 10px/1.35 var(--mono);overflow-wrap:anywhere;transition:background .2s,border-color .2s,transform .2s}
+.pathway-nodes a::before{content:'';position:absolute;left:3px;top:50%;width:7px;height:7px;transform:translateY(-50%);border-radius:50%;background:#eee;box-shadow:0 0 5px rgba(255,255,255,.27)}
+.pathway-nodes a:hover{background:#333;border-color:#c5c5c5;transform:translateX(2px)}
+.pathway-nodes a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.pathway-nodes a span:last-child:not(.pathway-pro){color:#f5f5f5;flex:none}
+.pathway-nodes a.pathway-primary{background:#303030;border-color:#909090;color:#fff}
+.pathway-pro{display:inline-flex;flex:none;border-radius:999px;padding:3px 7px;border:1px solid #c8c8c8;background:#eee;color:#171717;font:800 8px/1 var(--mono);letter-spacing:.02em;box-shadow:none}
 .pathways-note{margin:12px 3px 0;color:#85857e;font:10px/1.7 var(--mono)}
+@keyframes route-panel-enter{from{opacity:.55;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .secondary-game-links{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
 .secondary-game-links span{font:10px var(--mono);color:#7c7c76}
 .secondary-game-links a{font:700 10px var(--mono);padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:#fff}
@@ -493,14 +502,9 @@ h2{
 .journal-links a:hover{filter:brightness(1.13)}
 .journal-disclosure{border-top:1px solid #3d3943;padding-top:16px;margin:21px 0 0;font:10px/1.65 var(--mono);color:#96929d}
 @keyframes route-travel{0%{left:0}100%{left:calc(100% - 7px)}}
-@keyframes route-scan{0%{background-position:-70% 0}100%{background-position:170% 0}}
+@keyframes route-scan{0%{transform:translateX(0)}100%{transform:translateX(300%)}}
 @keyframes route-pulse{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2)}}
 @media(max-width:760px){
- .pathways-section{padding-top:46px;padding-bottom:60px}
- .pathway-card{padding:14px 11px;border-radius:15px}
- .pathway-card h3{font-size:15px;margin:13px 0 5px}
- .pathway-caption{font-size:9px}
- .pathway-nodes a{font-size:10px}
  .journal-content{grid-template-columns:1fr;gap:17px}
  .journal-links{grid-template-columns:repeat(3,minmax(0,1fr))}
  .journal-panel{padding:25px}
@@ -509,25 +513,6 @@ h2{
 }
 @media(max-width:480px){
  .site-header nav{gap:10px;font-size:11px}
- .pathways-section{padding-top:32px;padding-bottom:44px}
- .pathways-head{margin-bottom:16px;gap:8px}
- .pathways-head h2{font-size:27px}
- .pathways-head .kicker{font-size:9px}
- .pathways-signal{font-size:9px}
- .pathways-grid{gap:6px}
- .pathway-card{padding:10px 7px;border-radius:13px}
- .pathway-head{gap:3px}
- .pathway-icon{width:23px;height:23px;font-size:15px;border-radius:6px}
- .pathway-kicker{font-size:7px}
- .pathway-card h3{font-size:12px;letter-spacing:-.04em;min-height:26px;margin:10px 0 2px}
- .pathway-caption{font-size:8px;min-height:28px}
- .pathway-route{margin:3px 0 9px;height:12px}
- .pathway-nodes{gap:5px}
- .pathway-nodes a{padding:7px 4px 7px 12px;font-size:8.4px;letter-spacing:-.03em;min-height:30px;border-radius:7px}
- .pathway-nodes a:before{left:1px;width:6px;height:6px}
- .pathway-nodes:before{left:4px}
- .pathway-pro{font-size:6.5px;padding:3px 4px}
- .pathways-note{font-size:9px}
  .currently-section{padding-top:44px;padding-bottom:46px}
  .currently-section .section-heading-row{gap:10px;margin-bottom:16px}
  .currently-section h2{font-size:33px}
@@ -576,9 +561,56 @@ h2{
  .journal-disclosure{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){
- .pathways-signal span,.pathway-route:before,.pathway-dot,.journal-live{animation:none!important}
- .pathway-dot{left:50%}
 }
 
-.apk-badge{display:inline-flex;vertical-align:middle;align-items:center;padding:4px 6px;border-radius:99px;letter-spacing:.02em;color:#211827;background:linear-gradient(105deg,#e9c976,#f3dca1 40%,#ad83ef);box-shadow:0 0 0 1px rgba(255,229,173,.32);font:800 8px/1 var(--mono);white-space:nowrap}
-@media(max-width:480px){.apk-badge{font-size:6px;padding:3px 4px}}
+
+
+/* Square-card breakpoints, loaded last after the other component media queries. */
+.apk-badge{display:inline-flex;vertical-align:middle;align-items:center;padding:4px 7px;border-radius:99px;letter-spacing:.02em;color:#171717;background:#f2f2f2;border:1px solid #ccc;font:800 9px/1 var(--mono);white-space:nowrap}
+@media(max-width:760px){
+ .pathways-section{padding-top:36px;padding-bottom:46px}
+ .pathways-grid{gap:9px}
+ .pathway-summary{padding:12px}
+ .pathway-icon{width:25px;height:25px;font-size:17px;border-radius:7px}
+ .pathway-kicker{font-size:8px}
+ .pathway-title{font-size:clamp(13px,2.3vw,17px);margin-top:11px}
+ .pathway-caption{font-size:9px}
+ .pathway-route{margin:6px 0}
+ .pathway-teaser{font-size:9px}
+ .pathway-expand{font-size:9px}
+ .pathway-nodes{padding:10px 7px 11px;gap:6px}
+ .pathway-nodes a{font-size:9px;padding:7px 6px 7px 14px}
+ .pathway-nodes a::before{left:2px;width:6px;height:6px}
+ .pathway-nodes::before{left:11px}
+}
+@media(max-width:480px){
+ .pathways-section{padding-top:30px;padding-bottom:37px}
+ .pathways-head{margin-bottom:13px;gap:9px}
+ .pathways-head h2{font-size:26px}
+ .pathways-head .kicker{font-size:9px;margin-bottom:9px}
+ .pathways-signal{font-size:9px}
+ .pathways-grid{gap:6px}
+ .pathway-card{border-radius:12px}
+ .pathway-summary{padding:9px 8px}
+ .pathway-icon{width:21px;height:21px;font-size:14px;border-radius:6px}
+ .pathway-kicker{font-size:7px;letter-spacing:0}
+ .pathway-title{font-size:11.5px;line-height:1.18;margin:9px 0 2px}
+ .pathway-caption,.pathway-teaser{display:none}
+ .pathway-route{height:9px;margin:4px 0 2px}
+ .pathway-dot{width:6px;height:6px;bottom:-3.5px}
+ .pathway-expand{font-size:8px;padding-top:4px}
+ .pathway-expand-icon{font-size:14px}
+ .apk-badge{font-size:6.5px;padding:2px 4px;display:block;width:max-content;margin-top:3px}
+ .pathway-nodes{padding:9px 5px 11px;gap:5px}
+ .pathway-nodes a{font-size:8.5px;line-height:1.3;padding:6px 3px 6px 11px;min-height:29px;border-radius:7px}
+ .pathway-nodes a::before{left:1px;width:5px;height:5px}
+ .pathway-nodes::before{left:7px}
+ .pathway-pro{font-size:6px;padding:3px 4px}
+ .pathways-note{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pathways-signal span,.pathway-route::before,.pathway-dot{animation:none!important}
+ .pathway-dot{left:45%}
+ .pathway-nodes{animation:none!important}
+ .pathway-expand-icon{transition:none!important}
+}
