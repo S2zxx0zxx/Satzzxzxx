@@ -217,3 +217,19 @@ test('no other page components or route destinations are removed by the size red
     assert.ok(html.includes('id="' + id + '"'), id);
   }
 });
+
+test('GitArena activity section shows all three provided live badges with responsive styling', () => {
+  const start = html.indexOf('id="activity"');
+  const end = html.indexOf('id="pathways"', start);
+  assert.ok(start > html.indexOf('class="hero"') && end > start, 'activity follows hero before pathways');
+  const section = html.slice(start, end);
+  assert.equal((section.match(/gitarena\\.dev\\/api\\/badge\\/S2zxx0zxx/g) || []).length, 3);
+  assert.match(section, /timeframe=total&amp;theme=dark&amp;color=orange/);
+  assert.match(section, /pill\\?timeframe=total&amp;theme=light&amp;color=purple/);
+  assert.match(section, /graph\\?theme=light&amp;color=purple/);
+  assert.equal((section.match(/href="https:\\/\\/gitarena\\.dev\\/u\\/S2zxx0zxx"/g) || []).length, 4);
+  assert.match(section, /live GitHub contribution/i);
+  assert.match(css, /\\.gitarena-badge-grid\\{display:grid/);
+  assert.match(css, /\\.gitarena-graph img\\{display:block;width:100%/);
+  assert.match(css, /@media\\(max-width:600px\\)/);
+});
