@@ -31,7 +31,7 @@ test('new public project links and stages are represented accurately', () => {
     assert.ok(publicRepos.some(r => r.name === project), project);
     assert.ok(html.includes(project) || html.includes(project.replace('Global-Chess-Online-PVP-', 'Global Chess')));
   }
-  assert.match(html, /ARKYVON[\s\S]*?starter scaffold/);
+  assert.match(html, /ARKYVON[\s\S]*?early scaffold/);
   assert.match(html, /Global Chess[\s\S]*?draft PR/);
 });
 
@@ -83,4 +83,78 @@ test('repo URL and classification data use only valid public names', () => {
 test('the repository index retains its no-JavaScript GitHub fallback', () => {
   assert.match(html, /<noscript>/);
   assert.match(html, /github\.com\/S2zxx0zxx\?tab=repositories/);
+});
+
+
+test('game-first building section replaces the former finance/LLM spotlight', () => {
+  const start = html.indexOf('id="work"');
+  const end = html.indexOf('id="projects"', start);
+  const building = html.slice(start, end);
+  assert.ok(start > 0 && end > start);
+  assert.equal((building.match(/class="build-item"/g) || []).length, 2);
+  assert.match(building, /ARKYVON · Game Engine/);
+  assert.match(building, /Global Chess · Game Development/);
+  assert.doesNotMatch(building, /<h3>FinCo-Pilot<\/h3>/);
+  assert.doesNotMatch(building, /<h3>ToolsLab LLMs<\/h3>/);
+});
+
+test('compact engineering frontier is all dark with exact curated phase states', () => {
+  const start = html.indexOf('id="projects"');
+  const end = html.indexOf('id="completed-title"', start);
+  const frontier = html.slice(start, end);
+  assert.equal((frontier.match(/class="frontier-card frontier-card-lead"/g) || []).length, 4);
+  for (const [serial, status] of [
+    ['01 / GAME ENGINE', 'BUILDING'],
+    ['02 / INTERACTIVE GAMES', 'BUILDING'],
+    ['03 / CREATOR INFRA', 'TESTING'],
+    ['04 / STORAGE SYSTEMS', 'TESTING'],
+  ]) {
+    assert.ok(frontier.includes(serial + '</span><span class="phase-chip ' +
+      (status === 'BUILDING' ? 'active' : 'testing') + '">' + status), serial);
+  }
+  assert.match(css, /\.frontier-card,.frontier-card-lead\{background:#171717/);
+  assert.match(css, /grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+});
+
+test('shipped product showcase has eight entries and correct PWA/status labels', () => {
+  const start = html.indexOf('<div class="completed-card">');
+  const end = html.indexOf('</div>\n      </section>', start);
+  const shipped = html.slice(start, end);
+  assert.equal((shipped.match(/class="completed-item"/g) || []).length, 8);
+  for (const name of ['FinCo-Pilot', 'ToolsLab LLMs']) assert.ok(shipped.includes('<h3>' + name + '</h3>'));
+  assert.doesNotMatch(shipped, /class="status-value good">LIVE/);
+  assert.ok((shipped.match(/class="status-value good">VERIFIED/g) || []).length >= 3);
+  assert.ok((shipped.match(/Web \+ PWA/g) || []).length >= 6);
+  assert.ok(html.includes('data-count="8"'));
+});
+
+test('three-lane routing workflow precedes current development and has animated routes', () => {
+  const start = html.indexOf('id="pathways"');
+  assert.ok(start > 0 && start < html.indexOf('id="work"'));
+  const workflow = html.slice(start, html.indexOf('id="work"', start));
+  assert.equal((workflow.match(/class="pathway-card"/g) || []).length, 3);
+  for (const name of ['Game Engine', 'Web / APK', 'Blogs / Articles',
+    'Global-Chess-Online-PVP-', 'thepaisajournal.blogspot.com', 'pathway-dot']) {
+    assert.ok(workflow.includes(name), name);
+  }
+  assert.match(workflow, /apk-badge/);
+  assert.match(workflow, /pathway-pro/);
+  assert.match(css, /@keyframes route-travel/);
+  assert.match(css, /prefers-reduced-motion:reduce/);
+});
+
+test('editorial publication is discoverable, explicitly linked and disclosed', () => {
+  assert.match(html, /id="journal"/);
+  assert.match(html, /The Paisa Journal/);
+  assert.match(html, /https:\/\/thepaisajournal\.blogspot\.com\//);
+  assert.match(html, /same founder-led ecosystem/);
+  assert.match(html, /FinCalc articles/);
+});
+
+test('phone-first styling keeps game cards in a compact two-column layout', () => {
+  assert.match(css, /@media\(max-width:480px\)/);
+  assert.match(css, /\.frontier-card\{min-height:167px/);
+  assert.match(css, /\.pathways-grid\{gap:6px\}/);
+  assert.match(css, /\.currently-section \.build-data\{display:none\}/);
+  assert.match(css, /\.apk-badge/);
 });
