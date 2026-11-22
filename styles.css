@@ -614,3 +614,15 @@ h2{
  .pathway-nodes{animation:none!important}
  .pathway-expand-icon{transition:none!important}
 }
+
+@media(max-width:360px){
+ .pathways-grid{gap:5px}
+ .pathway-summary{padding:6px 5px}
+ .pathway-icon{width:17px;height:17px;font-size:12px;border-radius:5px}
+ .pathway-kicker{font-size:6px}
+ .pathway-title{font-size:10px;margin:5px 0 1px}
+ .pathway-route{height:8px;margin:2px 0 1px}
+ .pathway-expand{font-size:7px;padding-top:2px}
+ .pathway-expand-icon{font-size:12px}
+ .apk-badge{font-size:5px;padding:2px 3px;margin-top:1px}
+}
