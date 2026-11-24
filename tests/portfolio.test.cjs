@@ -233,3 +233,18 @@ test('GitArena activity section shows all three provided live badges with respon
   assert.ok(css.includes('.gitarena-graph img{display:block;width:100%'));
   assert.ok(css.includes('@media(max-width:600px)'));
 });
+
+test('GitRanks India rank is linked beside GitArena metrics without duplicating the badge', () => {
+  const start = html.indexOf('id="activity"');
+  const end = html.indexOf('id="pathways"', start);
+  assert.ok(start >= 0 && end > start);
+  const activity = html.slice(start, end);
+  assert.equal(activity.split('gitranks.com/badge/user/S2zxx0zxx/rank.svg').length - 1, 1);
+  assert.ok(activity.includes('href="https://gitranks.com/profile/S2zxx0zxx/country"'));
+  assert.ok(activity.includes('scope=country&amp;extra=none&amp;scheme=custom&amp;left=%23ffff00&amp;right=%2300ff00&amp;label=Satzzxzxx&amp;logo=0'));
+  assert.ok(activity.includes('alt="Satzzxzxx India developer rank on GitRanks"'));
+  assert.ok(activity.includes('class="activity-compact-badges"'));
+  assert.ok(css.includes('.activity-compact-badges{display:flex;flex-direction:column;gap:12px;min-width:0}'));
+  assert.ok(css.includes('.gitranks-rank-card img{width:auto;max-width:100%;max-height:64px'));
+  assert.ok(css.includes('.activity-compact-badges{gap:9px}'));
+});
