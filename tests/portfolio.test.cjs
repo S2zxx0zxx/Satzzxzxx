@@ -18,7 +18,7 @@ test('repository snapshot is the verified 50 public / 11 private inventory', () 
   assert.equal(data.inventory.private_repositories_audited, 11);
   assert.equal(data.inventory.total_audited, 61);
   assert.equal(publicRepos.length, 50);
-  assert.equal(new Set(publicRepos.map(r => r.name.toLowerCase())).size, 47);
+  assert.equal(new Set(publicRepos.map(r => r.name.toLowerCase())).size, data.inventory.public_repositories);
 });
 
 test('new public project links and stages are represented accurately', () => {
