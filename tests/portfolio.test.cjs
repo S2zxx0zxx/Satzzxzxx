@@ -248,3 +248,16 @@ test('GitRanks India rank is linked beside GitArena metrics without duplicating 
   assert.ok(css.includes('.gitranks-rank-card img{width:auto;max-width:100%;max-height:64px'));
   assert.ok(css.includes('.activity-compact-badges{gap:9px}'));
 });
+
+test('GitRanks profile card is shown once after badges and before contribution graph', () => {
+  const section = html.slice(html.indexOf('id="activity"'), html.indexOf('id="pathways"'));
+  const profileCard = 'gitranks.com/badge/user/S2zxx0zxx/profile-card.svg?scheme=classic';
+  assert.equal(section.split(profileCard).length - 1, 1);
+  assert.ok(section.includes('href="https://gitranks.com/profile/S2zxx0zxx"'));
+  assert.ok(section.includes('alt="S2zxx0zxx GitRanks developer profile card"'));
+  assert.ok(section.indexOf('class="gitranks-profile-card"') > section.indexOf('class="gitarena-badge-grid"'));
+  assert.ok(section.indexOf('class="gitranks-profile-card"') < section.indexOf('class="gitarena-graph"'));
+  assert.ok(css.includes('.gitranks-profile-card img{display:block;width:auto;height:auto;max-width:100%'));
+  assert.ok(css.includes('.gitranks-profile-card{margin-top:9px;padding:9px;border-radius:11px}'));
+  assert.ok(css.includes('.gitarena-badge-card,.gitranks-profile-card{transition:none}'));
+});
