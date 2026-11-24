@@ -643,6 +643,9 @@ h2{
 .gitarena-badge-card img{height:auto;max-width:100%;object-fit:contain}
 .gitarena-stats-card img{width:100%;max-width:395px}
 .gitarena-pill-card img{width:100%;max-width:300px}
+.activity-compact-badges{display:flex;flex-direction:column;gap:12px;min-width:0}
+.activity-compact-badges .gitarena-badge-card{flex:1;min-height:68px}
+.gitranks-rank-card img{width:auto;max-width:100%;max-height:64px;object-fit:contain}
 .gitarena-graph{display:block;margin-top:12px;padding:12px;background:var(--paper-2);border:1px solid var(--line);border-radius:14px}
 .gitarena-graph img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
 .gitarena-disclaimer{margin:11px 3px 0;color:#727269;font:400 11px/1.55 var(--mono)}
@@ -654,6 +657,7 @@ h2{
   .gitarena-profile-link{font-size:10px}
   .gitarena-panel{padding:10px;border-radius:16px}
   .gitarena-badge-grid{grid-template-columns:minmax(0,1fr);gap:9px}
+  .activity-compact-badges{gap:9px}
   .gitarena-badge-card{padding:12px;border-radius:11px}
   .gitarena-stats-card img{max-width:395px}
   .gitarena-pill-card img{max-width:300px}
