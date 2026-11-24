@@ -12,12 +12,12 @@ const live = read('portfolio-live.js');
 const data = JSON.parse(read('data/public-repositories.json'));
 const publicRepos = data.public_repositories;
 
-test('repository snapshot is the audited 47 public / 11 private inventory', () => {
+test('repository snapshot is the verified 50 public / 11 private inventory', () => {
   assert.equal(data.github_owner, 'S2zxx0zxx');
-  assert.equal(data.inventory.public_repositories, 47);
+  assert.equal(data.inventory.public_repositories, 50);
   assert.equal(data.inventory.private_repositories_audited, 11);
-  assert.equal(data.inventory.total_audited, 58);
-  assert.equal(publicRepos.length, 47);
+  assert.equal(data.inventory.total_audited, 61);
+  assert.equal(publicRepos.length, 50);
   assert.equal(new Set(publicRepos.map(r => r.name.toLowerCase())).size, 47);
 });
 
@@ -32,7 +32,9 @@ test('new public project links and stages are represented accurately', () => {
     assert.ok(html.includes(project) || html.includes(project.replace('Global-Chess-Online-PVP-', 'Global Chess')));
   }
   assert.match(html, /ARKYVON[\s\S]*?early scaffold/);
-  assert.match(html, /Global Chess[\s\S]*?draft PR/);
+  const building = html.slice(html.indexOf('id="work"'), html.indexOf('id="projects"'));
+  assert.match(building, /Global Chess · Game Development[\s\S]*?baseline merged to main/);
+  assert.match(building, /draft review/);
 });
 
 test('original portfolio navigation, section, physics and shipped cards remain', () => {
@@ -260,4 +262,43 @@ test('GitRanks profile card is shown once after badges and before contribution g
   assert.ok(css.includes('.gitranks-profile-card img{display:block;width:auto;height:auto;max-width:100%'));
   assert.ok(css.includes('.gitranks-profile-card{margin-top:9px;padding:9px;border-radius:11px}'));
   assert.ok(css.includes('.gitarena-badge-card,.gitranks-profile-card{transition:none}'));
+});
+
+
+test('new game projects have exact links and bounded build-stage language', () => {
+  const start = html.indexOf('id="latest-builds"');
+  const end = html.indexOf('id="activity"', start);
+  assert.ok(start > html.indexOf('class="hero"') && end > start);
+  const recent = html.slice(start, end);
+  assert.equal(recent.split('class="latest-build-card"').length - 1, 3);
+  const projects = [
+    ['Global Chess Ultimate', 'Global-Chess-Ultimate-PVP-'],
+    ['Dragon Arena', 'Dragon-Arena---Clash-Royal'],
+    ['Royal Ludo Arena', 'Royal-Ludo-Arena'],
+  ];
+  for (const [name, repo] of projects) {
+    assert.ok(recent.includes(name), name);
+    assert.ok(recent.includes('https://github.com/S2zxx0zxx/' + repo), repo);
+    assert.ok(publicRepos.some(r => r.name === repo && r.category === 'GAME / ENGINE'), repo);
+  }
+  assert.ok(recent.includes('no production PvP'));
+  assert.ok(recent.includes('not live multiplayer'));
+  assert.ok(recent.includes('not a Play Store release'));
+  assert.ok(css.includes('.latest-builds-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))'));
+  assert.ok(css.includes('.latest-builds-grid{grid-template-columns:1fr;gap:8px}'));
+  assert.ok(html.includes('data-count="4"'));
+  assert.ok(html.includes('id="publicRepoCount">50'));
+  assert.ok(html.includes('private · audited 24 Nov 2026'));
+  assert.ok(html.includes('repositories · verified 24 Nov 2026'));
+});
+
+test('repository explorer refresh does not reuse old 47-repo browser cache', () => {
+  assert.ok(live.includes("satzzxzxx-public-repos-v2"));
+  assert.ok(live.includes("n.startsWith('dragon-arena')"));
+  assert.ok(live.includes("n.startsWith('royal-ludo')"));
+  assert.ok(live.includes('public-repositories.json?v=20261124b'));
+  assert.ok(html.includes('styles.css?v=20261124b'));
+  assert.ok(html.includes('portfolio-live.js?v=20261124b'));
+  assert.equal(publicRepos.length, data.inventory.public_repositories);
+  assert.equal(data.verified_at, '2026-11-24');
 });
