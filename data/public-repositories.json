@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "github_owner": "S2zxx0zxx",
-  "verified_at": "2026-11-22",
+  "verified_at": "2026-11-24",
   "inventory": {
-    "public_repositories": 47,
+    "public_repositories": 50,
     "private_repositories_audited": 11,
-    "total_audited": 58
+    "total_audited": 61
   },
   "public_repositories": [
     {
@@ -73,6 +73,10 @@
       "category": "LEARNING / RESEARCH"
     },
     {
+      "name": "Dragon-Arena---Clash-Royal",
+      "category": "GAME / ENGINE"
+    },
+    {
       "name": "elitehub",
       "category": "WEB / APPS"
     },
@@ -106,6 +110,10 @@
     },
     {
       "name": "Global-Chess-Online-PVP-",
+      "category": "GAME / ENGINE"
+    },
+    {
+      "name": "Global-Chess-Ultimate-PVP-",
       "category": "GAME / ENGINE"
     },
     {
@@ -143,6 +151,10 @@
     {
       "name": "OpenXdrive",
       "category": "ARCHITECTURE / STORAGE"
+    },
+    {
+      "name": "Royal-Ludo-Arena",
+      "category": "GAME / ENGINE"
     },
     {
       "name": "S2zxx0zxx",

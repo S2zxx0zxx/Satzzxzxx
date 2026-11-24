@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const OWNER = 'S2zxx0zxx';
-  const CACHE_KEY = 'satzzxzxx-public-repos-v1';
+  const CACHE_KEY = 'satzzxzxx-public-repos-v2';
   const CACHE_TTL_MS = 15 * 60 * 1000;
   const MAX_PAGES = 10;
   const list = document.getElementById('repoList');
@@ -18,7 +18,8 @@
 
   const classify = name => {
     const n = name.toLowerCase();
-    if (n === 'arkyvon' || n.startsWith('global-chess') || n.startsWith('global-carrom') ||
+    if (n === 'arkyvon' || n.startsWith('global-chess') || n.startsWith('dragon-arena') ||
+        n.startsWith('royal-ludo') || n.startsWith('global-carrom') ||
         n.startsWith('global-brain') || n.includes('gamemart')) return 'GAME / ENGINE';
     if (n.includes('clipper') || n.includes('music-photo')) return 'CREATOR TOOLS';
     if (n.includes('arcovia') || n.includes('openxdrive') || n.includes('codebase-memory') ||
@@ -123,7 +124,7 @@
   }
   async function loadSnapshot() {
     try {
-      const response = await fetch('./data/public-repositories.json', { cache: 'no-cache' });
+      const response = await fetch('./data/public-repositories.json?v=20261124b', { cache: 'no-store' });
       if (!response.ok) throw new Error('Snapshot unavailable');
       const data = await response.json();
       if (data.github_owner !== OWNER || !Array.isArray(data.public_repositories)) throw new Error('Invalid snapshot');
